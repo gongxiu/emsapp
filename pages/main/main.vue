@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view v-if="hasLogin" class="hello">
+		<!-- <view v-if="hasLogin" class="hello">
 			<view class="title">
 				您好 {{userName}}，您已成功登录。
 			</view>
@@ -17,7 +17,8 @@
 				<view>这是 uni-app 带登录模板的示例App首页。</view>
 				<view>在 “我的” 中点击 “登录” 可以 “登录您的账户”</view>
 			</view>
-		</view>
+		</view> -->
+		<u-icon name="photo" color="#2979ff" size="28"></u-icon>
 	</view>
 </template>
 
@@ -29,37 +30,38 @@
 	export default {
 		computed: mapState(['forcedLogin', 'hasLogin', 'userName']),
 		onLoad() {
+			console.log(this.$u.config.v);
 			if (!this.hasLogin) {
-				uni.showModal({
-					title: '未登录',
-					content: '您未登录，需要登录后才能继续',
-					/**
-					 * 如果需要强制登录，不显示取消按钮
-					 */
-					showCancel: !this.forcedLogin,
-					success: (res) => {
-						if (res.confirm) {
-							/**
-							 * 如果需要强制登录，使用reLaunch方式
-							 */
-							if (this.forcedLogin) {
-								uni.reLaunch({
-									url: '../login/login'
-								});
-							} else {
-								uni.navigateTo({
-									url: '../login/login'
-								});
-							}
-						}
-					}
-				});
+				// uni.showModal({
+				// 	title: '未登录',
+				// 	content: '您未登录，需要登录后才能继续',
+				// 	/**
+				// 	 * 如果需要强制登录，不显示取消按钮
+				// 	 */
+				// 	showCancel: !this.forcedLogin,
+				// 	success: (res) => {
+				// 		if (res.confirm) {
+				// 			/**
+				// 			 * 如果需要强制登录，使用reLaunch方式
+				// 			 */
+				// 			if (this.forcedLogin) {
+				// 				uni.reLaunch({
+				// 					url: '../login/login'
+				// 				});
+				// 			} else {
+				// 				uni.navigateTo({
+				// 					url: '../login/login'
+				// 				});
+				// 			}
+				// 		}
+				// 	}
+				// });
 			}
 		}
 	}
 </script>
 
-<style>
+<style lang="scss">
 	.hello {
 		display: flex;
 		flex: 1;

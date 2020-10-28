@@ -26,7 +26,7 @@
 				"navigationBarTitleText": "我的"
 			}
 		}
-	],
+    ],
 	"tabBar": {
 		"color": "#7a7e83",
 		"selectedColor": "#0faeff",
@@ -46,6 +46,9 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarBackgroundColor": "#0faeff",
-		"backgroundColor": "#fbf9fe"
-	}
+		"backgroundColor": "#fbf9fe",
+		"usingComponents":{
+		}
+	},
+	"easycom": { "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue" }
 }
